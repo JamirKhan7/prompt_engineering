@@ -5,7 +5,7 @@ class OpenAiClient
     )
   end
 
-  def get_completion(prompt, model = "gpt-3.5-turbo")
+  def get_completion(prompt, model = "gpt-4.1-mini")
     response = @client.chat(
       parameters: {
         model: model,
