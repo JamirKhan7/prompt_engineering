@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post :get_completion, to: "tickets#get_completion"
+      post :inferring, to: "tickets#inferring"
     end
   end
 end
