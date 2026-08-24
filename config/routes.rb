@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post :get_completion, to: "tickets#get_completion"
       post :inferring, to: "tickets#inferring"
+      post :expanding, to: "tickets#expanding"
     end
   end
 end

@@ -5,7 +5,7 @@ class OpenAiClient
     )
   end
 
-  def get_completion(prompt, model = "gpt-4.1-mini")
+  def get_completion(prompt, model = "gpt-4.1-mini", temperature = 0)
     response = @client.chat(
       parameters: {
         model: model,
@@ -14,7 +14,8 @@ class OpenAiClient
             role: "user",
             content: prompt
           }
-        ]
+        ],
+        temperature: temperature
       }
     )
 
