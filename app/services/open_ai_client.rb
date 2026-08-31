@@ -21,4 +21,16 @@ class OpenAiClient
 
     response.dig("choices", 0, "message", "content")
   end
+
+  def get_completion_from_messages(messages, model = "gpt-4.1-mini", temperature = 0)
+    response = @client.chat(
+      parameters: {
+        model: model,
+        messages: messages,
+        temperature: temperature
+      }
+    )
+
+    response.dig("choices", 0, "message", "content")
+  end
 end

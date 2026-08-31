@@ -13,6 +13,12 @@ Rails.application.routes.draw do
       post :get_completion, to: "tickets#get_completion"
       post :inferring, to: "tickets#inferring"
       post :expanding, to: "tickets#expanding"
+
+      resources :conversations, only: [:create, :index, :destroy] do
+        resources :messages, only: [:create, :index]
+
+        post :order_summary, on: :member
+      end
     end
   end
 end
